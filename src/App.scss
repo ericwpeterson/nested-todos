@@ -1,0 +1,70 @@
+
+.taskForm {
+    display: flex;
+    flex-direction: column;
+
+    background-color: mistyrose;
+    width: calc(100% - 340px);
+
+
+    justify-content: space-between;
+
+
+    .taskFormTitle {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        background-color: yellow;
+    }
+
+
+    .taskFormNavBar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100px;
+        background-color: gray;
+        align-items: center;
+        padding: 50px;
+    }
+
+    .taskFormItemContainer {
+        padding: 50px;
+        //background-color: red;
+    }
+}
+
+.tree {
+  background-color: lightgray;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 340px;
+
+  .treeNode {
+    color: white;
+  }
+
+  .treeNodeLevel1 {
+      padding-left: 10px;
+  }
+
+  .treeNodeLevel2 {
+      padding-left: 15px;
+  }
+
+  .treeNodeLevel3 {
+      padding-left: 20px;
+  }
+
+  .treeNodeLevel3 {
+      padding-left: 25px;
+  }
+
+  .treeNodeLevel4 {
+      padding-left: 30px;
+  }
+
+}
