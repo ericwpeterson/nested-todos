@@ -19,19 +19,13 @@ const DEFAULT_STATE = Map({});
 
 export default function (state = DEFAULT_STATE, action) {
     let ret;
+    let selectedItem;
 
     switch (action.type) {
 
         case INIT:
             ret = state.set('tree', Immutable.fromJS(action.tree));
-            let selectedItem = ret.getIn(['tree', 'selectedItem']);
-
-            //preserved last selection state
-            if ( selectedItem ) {
-                ret = _select(ret, selectedItem, true);
-            } else {
-                ret = _select(ret, '0', true);
-            }
+            ret = _select(ret, '0', true);
             return ret;
 
         case NEXT:
@@ -47,7 +41,6 @@ export default function (state = DEFAULT_STATE, action) {
             return _select(ret,lastItem,true);
 
         case SELECT:
-            console.log( 'item selected', action.itemPath );
             selectedItem = state.getIn(['tree', 'selectedItem']);
             ret = _select(state,selectedItem,false);
             return _select(ret,action.itemPath,true);
@@ -209,7 +202,7 @@ let _select = (state, path, selected) => {
         pathArray.push('taskForm')
         ret = ret.set('taskFormPath', pathArray );
     }
-    
+
     return ret;
 }
 
